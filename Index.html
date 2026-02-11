@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya Prathapan R - Marketing & Business Operations Professional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFFFFF;
+            --secondary: #F8F9FA;
+            --accent: #2563EB;
+            --accent-dark: #1E40AF;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --border: #E5E7EB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1.5rem 5%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 5% 4rem;
+            background: var(--primary);
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-content h1 .name {
+            font-weight: 600;
+            display: block;
+            margin-top: 0.5rem;
+            color: var(--accent);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 500px;
+            line-height: 1.8;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 0;
+            font-size: 0.85rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            position: relative;
+            animation: fadeIn 1s ease 1s both;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 5rem;
+            animation: fadeInUp 1s ease 1.2s both;
+            border: 2px solid var(--border);
+            background: var(--primary);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-right: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-item:hover {
+            background: var(--secondary);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 5%;
+            border-top: 2px solid var(--border);
+        }
+
+        section:nth-child(even) {
+            background: var(--secondary);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 4rem;
+            text-align: center;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+        }
+
+        /* About Section */
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: var(--accent);
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            border: 2px solid var(--border);
+            background: var(--primary);
+        }
+
+        .skill-category {
+            padding: 2rem;
+            border-right: 2px solid var(--border);
+            border-bottom: 2px solid var(--border);
+            transition: background 0.3s ease;
+        }
+
+        .skill-category:nth-child(2n) {
+            border-right: none;
+        }
+
+        .skill-category:nth-child(3),
+        .skill-category:nth-child(4) {
+            border-bottom: none;
+        }
+
+        .skill-category:hover {
+            background: var(--secondary);
+        }
+
+        .skill-category h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .skill-category li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Experience Section */
+        .experience-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.25rem;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary);
+        }
+
+        .timeline-content {
+            padding: 2.5rem;
+            border: 2px solid var(--border);
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            border-color: var(--accent);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .timeline-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .timeline-header .company {
+            color: var(--text-secondary);
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        .timeline-date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .timeline-content h4 {
+            color: var(--text-primary);
+            margin: 2rem 0 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+
+        .timeline-content li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        .timeline-content li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Projects Section */
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 2px solid var(--border);
+        }
+
+        .project-card {
+            padding: 3rem;
+            border-right: 2px solid var(--border);
+            border-bottom: 2px solid var(--border);
+            background: var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:nth-child(3n) {
+            border-right: none;
+        }
+
+        .project-card:nth-child(4),
+        .project-card:nth-child(5),
+        .project-card:nth-child(6) {
+            border-bottom: none;
+        }
+
+        .project-card:hover {
+            background: var(--secondary);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .project-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .project-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        /* Education Section */
+        .education-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            border: 2px solid var(--border);
+        }
+
+        .education-card {
+            padding: 3rem;
+            border-right: 2px solid var(--border);
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .education-card:last-child {
+            border-right: none;
+        }
+
+        .education-card:hover {
+            background: var(--secondary);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .education-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .education-card .degree {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .education-card .year {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .education-card .cgpa {
+            display: inline-block;
+            color: var(--accent);
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--accent);
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-container p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            border: 2px solid var(--border);
+        }
+
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 3rem 4rem;
+            border-right: 2px solid var(--border);
+            text-decoration: none;
+            color: var(--text-primary);
+            background: var(--primary);
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .contact-link:last-child {
+            border-right: none;
+        }
+
+        .contact-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .contact-link:hover .contact-icon {
+            color: var(--primary);
+        }
+
+        .contact-link:hover span:last-child {
+            color: var(--primary);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        .contact-link span:last-child {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-secondary);
+            border-top: 2px solid var(--border);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            background: var(--secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-card:nth-child(2n) {
+                border-right: none;
+            }
+
+            .project-card:nth-child(3),
+            .project-card:nth-child(4) {
+                border-bottom: 2px solid var(--border);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 8rem 5% 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 2px solid var(--border);
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-category {
+                border-right: none;
+            }
+
+            .skill-category:nth-child(3) {
+                border-bottom: 2px solid var(--border);
+            }
+
+            .projects-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card,
+            .education-card {
+                border-right: none;
+            }
+
+            .project-card:nth-child(5) {
+                border-bottom: 2px solid var(--border);
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            section {
+                padding: 5rem 5%;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-link {
+                border-right: none;
+                border-bottom: 2px solid var(--border);
+            }
+
+            .contact-link:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                padding: 2rem;
+                border: 2px solid var(--border);
+                transition: right 0.3s ease;
+                gap: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                right: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">SURYA PRATHAPAN</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>
+                    Marketing &<br>
+                    <span class="name">Business Operations</span>
+                </h1>
+                <p class="subtitle">Driving Growth Through Data & Strategy</p>
+                <p>
+                    MBA graduate specializing in business operations, marketing analytics, and CRM management. 
+                    Transforming data into actionable insights and streamlining processes for operational excellence.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#experience" class="btn btn-secondary">View Work</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="Good image.jpeg" alt="Surya Prathapan R">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="hero-container">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">8.26</div>
+                    <div class="stat-label">MBA CGPA</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Technical Skills</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Marketing & Business Operations Specialist</h3>
+                    <p>
+                        Dynamic MBA graduate from SASTRA University with a strong foundation in Finance & Marketing, 
+                        complemented by a B.Com degree in Accounting & Finance. Currently driving business growth at IM Gears Pvt. Ltd., 
+                        managing the complete RFQ lifecycle, optimizing CRM operations, and delivering data-driven insights.
+                    </p>
+                    <p>
+                        Expertise lies in bridging the gap between business strategy and operational execution. Specializing in 
+                        lead generation, opportunity management, commercial negotiations, and developing analytical frameworks that 
+                        support informed decision-making.
+                    </p>
+                    <p>
+                        Passionate about leveraging technology and automation to create scalable, efficient business processes. 
+                        Proficient in Advanced Excel, Power BI, Tableau, and automation tools like n8n and Power Automate.
+                    </p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Analytical Tools</h4>
+                        <ul>
+                            <li>Advanced Excel</li>
+                            <li>Power BI</li>
+                            <li>Tableau</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Automation</h4>
+                        <ul>
+                            <li>n8n Workflows</li>
+                            <li>Power Automate</li>
+                            <li>Process Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>CRM & Management</h4>
+                        <ul>
+                            <li>Salesforce CRM</li>
+                            <li>Pipeline Management</li>
+                            <li>Opportunity Tracking</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Languages</h4>
+                        <ul>
+                            <li>English, Hindi</li>
+                            <li>Marathi, Tamil</li>
+                            <li>Sanskrit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="experience-container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Marketing & Business Operations</h3>
+                                <p class="company">IM Gears Pvt. Ltd</p>
+                            </div>
+                            <span class="timeline-date">June 2025 - Present</span>
+                        </div>
+
+                        <h4>Business Development & Operations</h4>
+                        <ul>
+                            <li>Drove new business initiation through structured lead generation, RFQ solicitation, and end-to-end opportunity management</li>
+                            <li>Managed complete RFQ lifecycle from intake to proposal submission, ensuring pipeline discipline and improved conversion</li>
+                            <li>Owned Salesforce CRM administration with focus on data accuracy, governance, and visibility across opportunity stages</li>
+                        </ul>
+
+                        <h4>Commercial & Negotiation Support</h4>
+                        <ul>
+                            <li>Facilitated NDA execution and supported finalization of commercial terms, pricing strategies, and margin optimization</li>
+                            <li>Supported customer negotiations by providing data-driven insights, cost scenarios, and commercial analyses</li>
+                            <li>Tracked purchase orders and opportunity stages ensuring seamless transition to production planning</li>
+                        </ul>
+
+                        <h4>Analytics, Reporting & Business Insights</h4>
+                        <ul>
+                            <li>Developed revenue projections, customer-level profitability (EBITDA) analyses, and performance dashboards</li>
+                            <li>Conducted demand forecasting, capacity analysis, and scenario planning for operational readiness</li>
+                            <li>Generated sales trend, variance, lost-business, and revenue scheduling reports for strategic planning</li>
+                        </ul>
+
+                        <h4>Process Improvement & Digital Enablement</h4>
+                        <ul>
+                            <li>Streamlined workflows and standardized trackers to improve operational visibility and execution consistency</li>
+                            <li>Applied automation-first thinking to reduce manual effort and enable scalable, technology-enabled operating models</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="projects-container">
+            <h2 class="section-title">Projects & Research</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-number">01</div>
+                    <h3>Consumer Insights & Market Opportunities</h3>
+                    <p>Comprehensive research on vegetarian protein products, analyzing consumer behavior patterns and identifying key market opportunities.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-number">02</div>
+                    <h3>AI-Driven Netnography</h3>
+                    <p>Leveraged artificial intelligence for netnographic analysis to develop segmentation, targeting, and positioning strategies.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-number">03</div>
+                    <h3>Trust & Behavioral Study</h3>
+                    <p>Researched trust factors and behavioral intentions of banking customers, providing insights for customer retention.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-number">04</div>
+                    <h3>RFQ Tracking Automation</h3>
+                    <p>Designed automated system for RFQ tracking and priority management, improving response time and conversion rates.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-number">05</div>
+                    <h3>Drive-to-Sheets Integration</h3>
+                    <p>Built seamless integration between Google Drive and Sheets for automated data synchronization workflows.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-number">06</div>
+                    <h3>Telegram MIS Chatbot</h3>
+                    <p>Developed prototype chatbot for Management Information System delivery, enabling real-time business metrics access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="education-container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>SASTRA Deemed to be University</h3>
+                    <p class="degree">Master of Business Administration</p>
+                    <p class="year">Finance & Marketing | 2023 - 2025</p>
+                    <span class="cgpa">CGPA: 8.26</span>
+                </div>
+                <div class="education-card">
+                    <h3>Ramakrishna Mission Vivekananda College</h3>
+                    <p class="degree">Bachelor of Commerce</p>
+                    <p class="year">Accounting & Finance | 2020 - 2023</p>
+                    <span class="cgpa">CGPA: 8.10</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>
+                Open to discussing new opportunities, collaborations, and conversations 
+                about business operations, marketing analytics, and process optimization.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:suryaram1811@gmail.com" class="contact-link">
+                    <span class="contact-icon">✉</span>
+                    <span>suryaram1811@gmail.com</span>
+               <a 
+  href="https://www.linkedin.com/in/suryaprathapan2607" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class="contact-link"
+>
+  <span class="contact-icon">in</span>
+  <span>LinkedIn Profile</span>
+</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Surya Prathapan R. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
