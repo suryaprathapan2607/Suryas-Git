@@ -1,1189 +1,325 @@
-good<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surya Prathapan R - Marketing & Business Operations Professional</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #FFFFFF;
-            --secondary: #F8F9FA;
-            --accent: #2563EB;
-            --accent-dark: #1E40AF;
-            --text-primary: #1F2937;
-            --text-secondary: #6B7280;
-            --border: #E5E7EB;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 2rem 5%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            padding: 1.5rem 5%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-            position: relative;
-            text-transform: uppercase;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 10rem 5% 4rem;
-            background: var(--primary);
-        }
-
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 5rem;
-            font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .hero-content h1 .name {
-            font-weight: 600;
-            display: block;
-            margin-top: 0.5rem;
-            color: var(--accent);
-        }
-
-        .hero-content .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .hero-content p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            max-width: 500px;
-            line-height: 1.8;
-            font-weight: 300;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 2rem;
-            animation: fadeInUp 1s ease 0.8s both;
-        }
-
-        .btn {
-            padding: 1.2rem 3rem;
-            border: none;
-            border-radius: 0;
-            font-size: 0.85rem;
-            font-weight: 400;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--primary);
-            border: 2px solid var(--accent);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-dark);
-            border-color: var(--accent-dark);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent);
-            border: 2px solid var(--accent);
-        }
-
-        .btn-secondary:hover {
-            background: var(--accent);
-            color: var(--primary);
-        }
-
-        /* Hero Image */
-        .hero-image {
-            position: relative;
-            animation: fadeIn 1s ease 1s both;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            overflow: hidden;
-            border: 2px solid var(--border);
-            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .hero-image-wrapper:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            margin-top: 5rem;
-            animation: fadeInUp 1s ease 1.2s both;
-            border: 2px solid var(--border);
-            background: var(--primary);
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 3rem 2rem;
-            border-right: 2px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .stat-item:last-child {
-            border-right: none;
-        }
-
-        .stat-item:hover {
-            background: var(--secondary);
-        }
-
-        .stat-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: var(--accent);
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            margin-top: 0.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 8rem 5%;
-            border-top: 2px solid var(--border);
-        }
-
-        section:nth-child(even) {
-            background: var(--secondary);
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 300;
-            margin-bottom: 4rem;
-            text-align: center;
-            letter-spacing: 2px;
-            color: var(--text-primary);
-        }
-
-        /* About Section */
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: start;
-        }
-
-        .about-text h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            color: var(--accent);
-        }
-
-        .about-text p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0;
-            border: 2px solid var(--border);
-            background: var(--primary);
-        }
-
-        .skill-category {
-            padding: 2rem;
-            border-right: 2px solid var(--border);
-            border-bottom: 2px solid var(--border);
-            transition: background 0.3s ease;
-        }
-
-        .skill-category:nth-child(2n) {
-            border-right: none;
-        }
-
-        .skill-category:nth-child(3),
-        .skill-category:nth-child(4) {
-            border-bottom: none;
-        }
-
-        .skill-category:hover {
-            background: var(--secondary);
-        }
-
-        .skill-category h4 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            color: var(--text-secondary);
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-            font-size: 0.9rem;
-            font-weight: 300;
-        }
-
-        .skill-category li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Experience Section */
-        .experience-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--accent);
-        }
-
-        .timeline-item {
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3.25rem;
-            top: 0;
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--primary);
-        }
-
-        .timeline-content {
-            padding: 2.5rem;
-            border: 2px solid var(--border);
-            background: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
-            border-color: var(--accent);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .timeline-header h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .timeline-header .company {
-            color: var(--text-secondary);
-            font-weight: 300;
-            font-size: 1rem;
-        }
-
-        .timeline-date {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .timeline-content h4 {
-            color: var(--text-primary);
-            margin: 2rem 0 1rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
-            font-size: 1.2rem;
-        }
-
-        .timeline-content ul {
-            list-style: none;
-            color: var(--text-secondary);
-        }
-
-        .timeline-content li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.6;
-            font-weight: 300;
-            font-size: 0.95rem;
-        }
-
-        .timeline-content li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Projects Section */
-        .projects-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            border: 2px solid var(--border);
-        }
-
-        .project-card {
-            padding: 3rem;
-            border-right: 2px solid var(--border);
-            border-bottom: 2px solid var(--border);
-            background: var(--primary);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-card:nth-child(3n) {
-            border-right: none;
-        }
-
-        .project-card:nth-child(4),
-        .project-card:nth-child(5),
-        .project-card:nth-child(6) {
-            border-bottom: none;
-        }
-
-        .project-card:hover {
-            background: var(--secondary);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
-        }
-
-        .project-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 300;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            opacity: 0.3;
-        }
-
-        .project-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .project-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-weight: 300;
-            font-size: 0.9rem;
-        }
-
-        /* Education Section */
-        .education-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0;
-            border: 2px solid var(--border);
-        }
-
-        .education-card {
-            padding: 3rem;
-            border-right: 2px solid var(--border);
-            background: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .education-card:last-child {
-            border-right: none;
-        }
-
-        .education-card:hover {
-            background: var(--secondary);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
-        }
-
-        .education-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .education-card .degree {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-        }
-
-        .education-card .year {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-        }
-
-        .education-card .cgpa {
-            display: inline-block;
-            color: var(--accent);
-            padding: 0.8rem 1.5rem;
-            border: 2px solid var(--accent);
-            font-weight: 400;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-container p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 4rem;
-            font-weight: 300;
-            line-height: 1.8;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 0;
-            flex-wrap: wrap;
-            border: 2px solid var(--border);
-        }
-
-        .contact-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 3rem 4rem;
-            border-right: 2px solid var(--border);
-            text-decoration: none;
-            color: var(--text-primary);
-            background: var(--primary);
-            transition: all 0.3s ease;
-            flex: 1;
-        }
-
-        .contact-link:last-child {
-            border-right: none;
-        }
-
-        .contact-link:hover {
-            background: var(--accent);
-            color: var(--primary);
-        }
-
-        .contact-link:hover .contact-icon {
-            color: var(--primary);
-        }
-
-        .contact-link:hover span:last-child {
-            color: var(--primary);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            transition: color 0.3s ease;
-        }
-
-        .contact-link span:last-child {
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 5%;
-            text-align: center;
-            color: var(--text-secondary);
-            border-top: 2px solid var(--border);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            background: var(--secondary);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-container,
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .hero-content h1 {
-                font-size: 4rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .project-card:nth-child(2n) {
-                border-right: none;
-            }
-
-            .project-card:nth-child(3),
-            .project-card:nth-child(4) {
-                border-bottom: 2px solid var(--border);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1.5rem;
-            }
-
-            .hero {
-                padding: 8rem 5% 3rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content .subtitle {
-                font-size: 0.9rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-item {
-                border-right: none;
-                border-bottom: 2px solid var(--border);
-            }
-
-            .stat-item:last-child {
-                border-bottom: none;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skill-category {
-                border-right: none;
-            }
-
-            .skill-category:nth-child(3) {
-                border-bottom: 2px solid var(--border);
-            }
-
-            .projects-grid,
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card,
-            .education-card {
-                border-right: none;
-            }
-
-            .project-card:nth-child(5) {
-                border-bottom: 2px solid var(--border);
-            }
-
-            .timeline {
-                padding-left: 2rem;
-            }
-
-            section {
-                padding: 5rem 5%;
-            }
-
-            .contact-links {
-                flex-direction: column;
-            }
-
-            .contact-link {
-                border-right: none;
-                border-bottom: 2px solid var(--border);
-            }
-
-            .contact-link:last-child {
-                border-bottom: none;
-            }
-        }
-
-        /* Hamburger Menu for Mobile */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: var(--accent);
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 90px;
-                right: -100%;
-                flex-direction: column;
-                background: rgba(255, 255, 255, 0.98);
-                padding: 2rem;
-                border: 2px solid var(--border);
-                transition: right 0.3s ease;
-                gap: 1.5rem;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                right: 5%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surya Prathapan R | Business Operations &amp; Commercial Strategy</title>
+<meta name="description" content="Surya Prathapan R — Business Operations &amp; Commercial Strategy professional. MBA in Finance &amp; Marketing. Explore experience, projects and get in touch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">SURYA PRATHAPAN</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <a href="#top" class="navbar__brand">Surya Prathapan <span>R</span></a>
+    <nav class="navbar__links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/Surya_Prathapan_Resume.pdf" target="_blank" rel="noopener" class="btn btn--small btn--primary">Resume</a>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>
-                    Marketing &<br>
-                    <span class="name">Business Operations</span>
-                </h1>
-                <p class="subtitle">Driving Growth Through Data & Strategy</p>
-                <p>
-                    MBA graduate specializing in business operations, marketing analytics, and CRM management. 
-                    Transforming data into actionable insights and streamlining processes for operational excellence.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View Work</a>
-              </div>
+    <div class="navbar__right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20 14.3A8.4 8.4 0 1 1 9.7 4a6.6 6.6 0 0 0 10.3 10.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="hero-image">
-        <div class="hero-image-wrapper">
-            <img src="Good%20image.jpeg" alt="Surya Prathapan R">
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="eyebrow">Business Operations &amp; Commercial Strategy</p>
+        <h1>Surya Prathapan R</h1>
+        <p class="hero__summary">
+          MBA-trained operations &amp; commercial strategy professional experienced in RFQ &amp; opportunity
+          management, executive MIS reporting, profitability analysis and CRM governance — turning business
+          data into decisions leadership can act on.
+        </p>
+        <div class="hero__meta">
+          <span>📍 Dubai, United Arab Emirates</span>
+          <span>🎓 MBA, Finance &amp; Marketing</span>
         </div>
+        <div class="hero__actions">
+          <a href="assets/Surya_Prathapan_Resume.pdf" target="_blank" rel="noopener" class="btn btn--primary">Download Resume</a>
+          <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+        </div>
+        <div class="hero__socials">
+          <a href="mailto:suryaram1811@gmail.com" aria-label="Email" title="suryaram1811@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 6.5 8 6.5 8-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/suryaprathapan2607" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 10v6.5M7.5 7.6v.01M11.5 16.5V10M11.5 12.7c0-1.5 1-2.7 2.5-2.7s2.5 1.2 2.5 2.7v3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="tel:+971505380292" aria-label="Phone" title="+971 5053 80292">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 .8-1.8 1.8-1.8h1.4c.8 0 1.5.5 1.7 1.3l.8 2.7c.2.7 0 1.4-.5 1.9l-1 1a14 14 0 0 0 6 6l1-1c.5-.5 1.2-.7 1.9-.5l2.7.8c.8.2 1.3.9 1.3 1.7v1.4c0 1-.8 1.8-1.8 1.8h-.7C9.5 20.3 3.7 14.5 3.7 5.7V5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero__photo">
+        <div class="hero__photo-ring">
+          <img src="assets/profile.jpeg" alt="Portrait of Surya Prathapan R">
+        </div>
+      </div>
     </div>
-        </div>
-    </section>
+  </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="hero-container">
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number">8.26</div>
-                    <div class="stat-label">MBA CGPA</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Technical Skills</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Languages</div>
-                </div>
+  <div class="marquee" aria-label="Integrity, Passion, Purpose">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span class="marquee__item">Integrity</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Passion</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Purpose</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Integrity</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Passion</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Purpose</span><span class="marquee__sep">&rsaquo;</span>
+      </div>
+      <div class="marquee__group" aria-hidden="true">
+        <span class="marquee__item">Integrity</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Passion</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Purpose</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Integrity</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Passion</span><span class="marquee__sep">&rsaquo;</span>
+        <span class="marquee__item">Purpose</span><span class="marquee__sep">&rsaquo;</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" class="section">
+    <div class="container">
+      <p class="section__eyebrow">About</p>
+      <h2 class="section__title">Professional Summary</h2>
+      <p class="about__text">
+        Business Operations and Commercial Strategy professional with experience working closely with senior
+        leadership to support commercial planning, executive decision-making, business analytics and
+        cross-functional execution. Experienced in translating business data into strategic insights through
+        executive MIS reporting, profitability analysis, forecasting, pricing evaluation and CRM governance.
+        Known for improving operational visibility, driving process improvements and enabling informed
+        business decisions through structured analysis, stakeholder coordination and workflow automation.
+        MBA in Finance &amp; Marketing with strong commercial acumen, analytical capability and adaptability
+        to contribute across industries.
+      </p>
+
+      <div class="chips">
+        <span class="chip">Business Operations &amp; Commercial Strategy</span>
+        <span class="chip">Executive Decision Support through MIS</span>
+        <span class="chip">Revenue, Profitability &amp; Pricing Analysis</span>
+        <span class="chip">RFQ &amp; Opportunity Management</span>
+        <span class="chip">Cross-functional Stakeholder Management</span>
+        <span class="chip">Process Improvement &amp; Operational Excellence</span>
+        <span class="chip">Workflow Automation &amp; Digital Transformation</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section section--tint">
+    <div class="container">
+      <p class="section__eyebrow">Experience</p>
+      <h2 class="section__title">Where I've Worked</h2>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__head">
+            <div>
+              <h3>Commercial Strategy &amp; Business Operations</h3>
+              <p class="timeline__org">IM Gears Pvt. Ltd</p>
             </div>
+            <span class="timeline__date">June 2025 – June 2026</span>
+          </div>
+
+          <div class="timeline__group">
+            <h4>Business Development &amp; RFQ Management</h4>
+            <ul>
+              <li>Drove new business initiation through structured lead generation, RFQ solicitation, and end-to-end opportunity management, acting as the central coordination point between customers, cross-functional teams, and senior leadership.</li>
+              <li>Managed the complete RFQ lifecycle — from intake, evaluation, prioritization, and assignment to timely proposal submission, ensuring pipeline discipline and improved conversion through systematic customer follow-ups.</li>
+              <li>Owned Salesforce CRM administration, ensuring data accuracy, governance and visibility across opportunity stages to support informed decision-making.</li>
+            </ul>
+          </div>
+
+          <div class="timeline__group">
+            <h4>Commercial &amp; Negotiation Support</h4>
+            <ul>
+              <li>Managed NDA coordination and drove commercial evaluations, pricing strategies, and margin optimization efforts for new business opportunities.</li>
+              <li>Developed cost scenarios and negotiation recommendations to strengthen customer discussions and support profitable business acquisition.</li>
+              <li>Governed business award tracking through customer purchase order releases, ensuring seamless handover of awarded programs into production planning and operational execution.</li>
+            </ul>
+          </div>
+
+          <div class="timeline__group">
+            <h4>Analytics, Reporting &amp; Business Insights</h4>
+            <ul>
+              <li>Developed revenue projections, customer-level profitability analysis and performance dashboards for existing and new product portfolios.</li>
+              <li>Conducted demand forecasting, capacity analysis and scenario planning to assess operational readiness for new programs.</li>
+              <li>Generated sales trend, variance, lost-business and revenue scheduling reports to support strategic planning and management reviews.</li>
+            </ul>
+          </div>
+
+          <div class="timeline__group">
+            <h4>Project &amp; Change Coordination</h4>
+            <ul>
+              <li>Coordinated task allocation, workload planning and pipeline management for engineering teams to ensure balanced execution and adherence to timelines.</li>
+              <li>Acted as a liaison between customers and internal technical teams, improving alignment, clarity and delivery outcomes across programs.</li>
+              <li>Maintained structured documentation, supported NPD planning and coordinated milestone-based execution to ensure timely program delivery.</li>
+            </ul>
+          </div>
+
+          <div class="timeline__group">
+            <h4>Process Improvement &amp; Digital Enablement</h4>
+            <ul>
+              <li>Streamlined workflows and standardized trackers to improve operational visibility, accountability and execution consistency across teams.</li>
+              <li>Applied automation-first thinking to reduce manual effort, strengthen data discipline and enable scalable, technology-enabled operating models.</li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Marketing & Business Operations Specialist</h3>
-                    <p>
-                        Dynamic MBA graduate from SASTRA University with a strong foundation in Finance & Marketing, 
-                        complemented by a B.Com degree in Accounting & Finance. Currently driving business growth at IM Gears Pvt. Ltd., 
-                        managing the complete RFQ lifecycle, optimizing CRM operations, and delivering data-driven insights.
-                    </p>
-                    <p>
-                        Expertise lies in bridging the gap between business strategy and operational execution. Specializing in 
-                        lead generation, opportunity management, commercial negotiations, and developing analytical frameworks that 
-                        support informed decision-making.
-                    </p>
-                    <p>
-                        Passionate about leveraging technology and automation to create scalable, efficient business processes. 
-                        Proficient in Advanced Excel, Power BI, Tableau, and automation tools like n8n and Power Automate.
-                    </p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Analytical Tools</h4>
-                        <ul>
-                            <li>Advanced Excel</li>
-                            <li>Power BI</li>
-                            <li>Tableau</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Automation</h4>
-                        <ul>
-                            <li>n8n Workflows</li>
-                            <li>Power Automate</li>
-                            <li>Process Optimization</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>CRM & Management</h4>
-                        <ul>
-                            <li>Salesforce CRM</li>
-                            <li>Pipeline Management</li>
-                            <li>Opportunity Tracking</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Languages</h4>
-                        <ul>
-                            <li>English, Hindi</li>
-                            <li>Marathi, Tamil</li>
-                            <li>Sanskrit</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  <section id="projects" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Projects</p>
+      <h2 class="section__title">Selected Work</h2>
+      <p class="section__lede">A closer look lives on my full portfolio site, including build details and outcomes.</p>
+
+      <div class="cards">
+        <article class="card">
+          <span class="card__tag">Automation</span>
+          <h3>RFQ Tracking &amp; Priority Management Automation</h3>
+          <p>Automated system to track incoming RFQs and manage prioritization, improving response time and pipeline conversion.</p>
+        </article>
+        <article class="card">
+          <span class="card__tag">Automation</span>
+          <h3>Business Conversion Tracking Automation</h3>
+          <p>Automated tracking of opportunity-to-order conversion to give leadership real-time visibility into pipeline health.</p>
+        </article>
+        <article class="card">
+          <span class="card__tag">Prototype</span>
+          <h3>Telegram-Based MIS Chatbot</h3>
+          <p>Prototype chatbot delivering real-time business metrics and MIS updates directly through Telegram.</p>
+        </article>
+        <article class="card">
+          <span class="card__tag">Research · MBA</span>
+          <h3>Consumer Insights &amp; Market Opportunities for Vegetarian Protein Products</h3>
+          <p>Research study analyzing consumer behavior and identifying market opportunities in the vegetarian protein category.</p>
+        </article>
+        <article class="card">
+          <span class="card__tag">Research · MBA</span>
+          <h3>AI-Driven Netnography for STP in Sustainable Consumer Markets</h3>
+          <p>Applied AI-driven netnographic analysis to develop segmentation, targeting and positioning strategy.</p>
+        </article>
+        <article class="card">
+          <span class="card__tag">Research · B.Com</span>
+          <h3>Trust and Behavioral Intention of Banking Customers</h3>
+          <p>Study on the trust factors driving behavioral intention among banking customers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section section--tint">
+    <div class="container">
+      <p class="section__eyebrow">Skills</p>
+      <h2 class="section__title">Tools &amp; Capabilities</h2>
+
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h4>Analytical Tools</h4>
+          <p>Advanced Excel, Power BI</p>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="experience-container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Marketing & Business Operations</h3>
-                                <p class="company">IM Gears Pvt. Ltd</p>
-                            </div>
-                            <span class="timeline-date">June 2025 - Present</span>
-                        </div>
-
-                        <h4>Business Development & Operations</h4>
-                        <ul>
-                            <li>Drove new business initiation through structured lead generation, RFQ solicitation, and end-to-end opportunity management</li>
-                            <li>Managed complete RFQ lifecycle from intake to proposal submission, ensuring pipeline discipline and improved conversion</li>
-                            <li>Owned Salesforce CRM administration with focus on data accuracy, governance, and visibility across opportunity stages</li>
-                        </ul>
-
-                        <h4>Commercial & Negotiation Support</h4>
-                        <ul>
-                            <li>Facilitated NDA execution and supported finalization of commercial terms, pricing strategies, and margin optimization</li>
-                            <li>Supported customer negotiations by providing data-driven insights, cost scenarios, and commercial analyses</li>
-                            <li>Tracked purchase orders and opportunity stages ensuring seamless transition to production planning</li>
-                        </ul>
-
-                        <h4>Analytics, Reporting & Business Insights</h4>
-                        <ul>
-                            <li>Developed revenue projections, customer-level profitability (EBITDA) analyses, and performance dashboards</li>
-                            <li>Conducted demand forecasting, capacity analysis, and scenario planning for operational readiness</li>
-                            <li>Generated sales trend, variance, lost-business, and revenue scheduling reports for strategic planning</li>
-                        </ul>
-
-                        <h4>Process Improvement & Digital Enablement</h4>
-                        <ul>
-                            <li>Streamlined workflows and standardized trackers to improve operational visibility and execution consistency</li>
-                            <li>Applied automation-first thinking to reduce manual effort and enable scalable, technology-enabled operating models</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="skill-block">
+          <h4>AI Productivity &amp; Automation</h4>
+          <p>Claude, Claude Code, ChatGPT, n8n</p>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="projects-container">
-            <h2 class="section-title">Projects & Research</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-number">01</div>
-                    <h3>Consumer Insights & Market Opportunities</h3>
-                    <p>Comprehensive research on vegetarian protein products, analyzing consumer behavior patterns and identifying key market opportunities.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">02</div>
-                    <h3>AI-Driven Netnography</h3>
-                    <p>Leveraged artificial intelligence for netnographic analysis to develop segmentation, targeting, and positioning strategies.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">03</div>
-                    <h3>Trust & Behavioral Study</h3>
-                    <p>Researched trust factors and behavioral intentions of banking customers, providing insights for customer retention.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">04</div>
-                    <h3>RFQ Tracking Automation</h3>
-                    <p>Designed automated system for RFQ tracking and priority management, improving response time and conversion rates.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">05</div>
-                    <h3>Drive-to-Sheets Integration</h3>
-                    <p>Built seamless integration between Google Drive and Sheets for automated data synchronization workflows.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">06</div>
-                    <h3>Telegram MIS Chatbot</h3>
-                    <p>Developed prototype chatbot for Management Information System delivery, enabling real-time business metrics access.</p>
-                </div>
-            </div>
+        <div class="skill-block">
+          <h4>Project &amp; Pipeline Management</h4>
+          <p>Salesforce CRM</p>
         </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="education" id="education">
-        <div class="education-container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>SASTRA Deemed to be University</h3>
-                    <p class="degree">Master of Business Administration</p>
-                    <p class="year">Finance & Marketing | 2023 - 2025</p>
-                    <span class="cgpa">CGPA: 8.26</span>
-                </div>
-                <div class="education-card">
-                    <h3>Ramakrishna Mission Vivekananda College</h3>
-                    <p class="degree">Bachelor of Commerce</p>
-                    <p class="year">Accounting & Finance | 2020 - 2023</p>
-                    <span class="cgpa">CGPA: 8.10</span>
-                </div>
-            </div>
+        <div class="skill-block">
+          <h4>Languages</h4>
+          <p>English, Hindi, Tamil, Marathi, Sanskrit, Arabic (Learner)</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p>
-                Open to discussing new opportunities, collaborations, and conversations 
-                about business operations, marketing analytics, and process optimization.
-            </p>
-            <div class="contact-links">
-                <a href="mailto:suryaram1811@gmail.com" class="contact-link">
-                    <span class="contact-icon">✉</span>
-                    <span>suryaram1811@gmail.com</span>
-               <a 
-  href="https://www.linkedin.com/in/suryaprathapan2607" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  class="contact-link"
->
-  <span class="contact-icon">in</span>
-  <span>LinkedIn Profile</span>
-</a>
+  <section id="education" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Education</p>
+      <h2 class="section__title">Academic Background</h2>
 
-            </div>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div>
+            <h3>Master of Business Administration — Finance &amp; Marketing</h3>
+            <p class="edu-item__org">SASTRA Deemed to be University</p>
+          </div>
+          <div class="edu-item__meta">
+            <span>2023 – 2025</span>
+            <span>CGPA 8.26</span>
+          </div>
         </div>
-    </section>
+        <div class="edu-item">
+          <div>
+            <h3>Bachelor of Commerce — Accounting &amp; Finance</h3>
+            <p class="edu-item__org">Ramakrishna Mission Vivekananda College</p>
+          </div>
+          <div class="edu-item__meta">
+            <span>2020 – 2023</span>
+            <span>CGPA 8.10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Surya Prathapan R. All rights reserved.</p>
-    </footer>
+  <section id="contact" class="section section--dark">
+    <div class="container contact__inner">
+      <p class="section__eyebrow section__eyebrow--light">Contact</p>
+      <h2 class="section__title section__title--light">Let's Connect</h2>
+      <p class="contact__lede">
+        Open to new opportunities in business operations and commercial strategy. Reach out directly, or
+        browse the full portfolio for a deeper look at my work.
+      </p>
 
-    <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:suryaram1811@gmail.com">
+          <span class="contact-card__label">Email</span>
+          <span class="contact-card__value">suryaram1811@gmail.com</span>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/in/suryaprathapan2607" target="_blank" rel="noopener">
+          <span class="contact-card__label">LinkedIn</span>
+          <span class="contact-card__value">linkedin.com/in/suryaprathapan2607</span>
+        </a>
+        <a class="contact-card" href="tel:+971505380292">
+          <span class="contact-card__label">Phone</span>
+          <span class="contact-card__value">+971 5053 80292</span>
+        </a>
+      </div>
 
-        // Hamburger menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+      <a href="assets/Surya_Prathapan_Resume.pdf" target="_blank" rel="noopener" class="btn btn--primary btn--light">Download Resume (PDF)</a>
+    </div>
+  </section>
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+</main>
 
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© 2026 Surya Prathapan R.</span>
+  </div>
+</footer>
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-    </script>
+<script src="js/script.js"></script>
 </body>
 </html>
-
-
-
