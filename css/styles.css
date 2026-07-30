@@ -491,7 +491,7 @@ img { max-width: 100%; display: block; }
 /* Project cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-bottom: 28px;
 }
@@ -541,6 +541,12 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
 }
 .link-arrow:hover { text-decoration: underline; }
+
+.card .link-arrow {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.88rem;
+}
 
 /* Skills */
 .skills-grid {
